@@ -19,6 +19,7 @@
   .nav-wordmark span { color: var(--fire); }
   .nav-right { display: flex; align-items: center; gap: 10px; }
   .nav-badge { background: rgba(255,61,0,0.12); border: 1px solid rgba(255,61,0,0.25); color: var(--fire-glow); font-size: 11px; font-weight: 600; padding: 3px 10px; border-radius: 20px; letter-spacing: 0.06em; text-transform: uppercase; }
+  
   .hero { padding: 2.5rem 1.25rem 2rem; max-width: 1100px; margin: 0 auto; }
   .hero-eyebrow { font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--fire); margin-bottom: 0.6rem; }
   .hero h1 { font-family: 'Barlow Condensed', sans-serif; font-weight: 900; font-size: clamp(2rem, 6vw, 3.4rem); line-height: 1.05; letter-spacing: 0.01em; margin-bottom: 0.75rem; }
@@ -28,10 +29,33 @@
   .stat-pill { display: flex; align-items: center; gap: 7px; background: var(--bg-card); border: 1px solid var(--border); border-radius: 30px; padding: 6px 14px; font-size: 13px; color: var(--text-secondary); }
   .stat-pill b { color: var(--text-primary); font-weight: 600; }
   .stat-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--fire); }
+  
   .mesociclo-box { background: rgba(124,77,255,0.05); border: 1px solid rgba(124,77,255,0.15); border-radius: var(--radius-lg); padding: 1.25rem; margin: 1.5rem auto 0; max-width: 1100px; font-size: 13.5px; color: var(--text-secondary); }
   .mesociclo-box h3 { font-family: 'Barlow Condensed', sans-serif; color: #B39DDB; font-size: 1.2rem; font-weight: 700; text-transform: uppercase; margin-bottom: 0.5rem; letter-spacing: 0.05em; }
   .mesociclo-box strong { color: var(--text-primary); }
   .mesociclo-warning { margin-top: 0.75rem; padding: 8px 12px; background: rgba(255, 61, 0, 0.06); border-left: 3px solid var(--fire); border-radius: 4px; color: var(--text-primary); font-size: 12.5px; }
+
+  /* ESTILOS DEL GLOSARIO DE VIDEOS */
+  .glosario-container { margin-top: 1.5rem; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; }
+  .glosario-details { width: 100%; }
+  .glosario-summary { padding: 1.1rem 1.25rem; font-family: 'Barlow Condensed', sans-serif; font-size: 1.2rem; font-weight: 700; color: var(--text-primary); text-transform: uppercase; letter-spacing: 0.05em; cursor: pointer; list-style: none; display: flex; align-items: center; justify-content: space-between; user-select: none; transition: background 0.2s ease; }
+  .glosario-summary:hover { background: rgba(255, 255, 255, 0.02); }
+  .glosario-summary::-webkit-details-marker { display: none; }
+  .glosario-summary::after { content: '►'; font-size: 0.8rem; color: var(--fire-glow); transition: transform 0.2s ease; }
+  .glosario-details[open] .glosario-summary::after { transform: rotate(90deg); }
+  .glosario-content { padding: 0 1.25rem 1.25rem; border-top: 1px solid var(--border); background: rgba(0, 0, 0, 0.15); }
+  .glosario-day-title { font-family: 'Barlow Condensed', sans-serif; font-size: 1.05rem; color: var(--fire-glow); text-transform: uppercase; margin: 1.25rem 0 0.5rem; letter-spacing: 0.05em; font-weight: 700; border-bottom: 1px solid rgba(255,61,0,0.15); padding-bottom: 4px; }
+  .glosario-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 0.6rem; }
+  .video-card { background: rgba(255, 255, 255, 0.02); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 0.6rem 0.9rem; display: flex; align-items: center; justify-content: space-between; gap: 12px; transition: border-color 0.2s ease, background 0.2s ease; }
+  .video-card:hover { border-color: rgba(255, 61, 0, 0.3); background: rgba(255, 61, 0, 0.02); }
+  .video-info { flex: 1; min-width: 0; }
+  .video-title { font-size: 13px; font-weight: 600; color: var(--text-primary); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .video-category { font-size: 10px; font-weight: 500; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.02em; margin-top: 1px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .btn-video { background: rgba(255, 61, 0, 0.1); border: 1px solid rgba(255, 61, 0, 0.2); color: var(--fire-glow); padding: 4px 9px; border-radius: 6px; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; text-decoration: none; display: inline-flex; align-items: center; gap: 4px; transition: all 0.15s ease; flex-shrink: 0; }
+  .btn-video:hover { background: var(--fire); color: white; border-color: var(--fire); }
+  .btn-video.disabled { background: rgba(255,255,255,0.03); border-color: transparent; color: var(--text-muted); cursor: not-allowed; }
+  .btn-video svg { width: 10px; height: 10px; fill: currentColor; }
+
   .filters-wrap { background: var(--bg-filter); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 0.9rem 1.25rem; position: sticky; top: 60px; z-index: 90; overflow-x: auto; }
   .filters-inner { max-width: 1100px; margin: 0 auto; display: flex; gap: 0.6rem; flex-wrap: nowrap; min-width: max-content; }
   .filter-group { display: flex; align-items: center; gap: 0.4rem; }
@@ -40,6 +64,7 @@
   .chip { background: rgba(255,255,255,0.04); border: 1px solid var(--border); color: var(--text-secondary); font-size: 12px; font-weight: 500; padding: 5px 13px; border-radius: 20px; cursor: pointer; white-space: nowrap; transition: all 0.18s ease; user-select: none; }
   .chip:hover { border-color: rgba(255,61,0,0.35); color: var(--text-primary); background: rgba(255,61,0,0.06); }
   .chip.active { background: rgba(255,61,0,0.15); border-color: var(--fire); color: var(--fire-glow); font-weight: 600; }
+  
   .grid-wrap { max-width: 1100px; margin: 0 auto; padding: 1.5rem 1.25rem 3rem; }
   .grid-meta { font-size: 12px; color: var(--text-muted); margin-bottom: 1rem; }
   .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1rem; }
@@ -64,6 +89,7 @@
   .btn-start:hover { background: #FF5722; transform: scale(1.03); }
   .btn-start:active { transform: scale(0.97); }
   .btn-done { background: rgba(0,200,130,0.12); color: #00E096; border: 1px solid rgba(0,200,130,0.25); font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 0.95rem; letter-spacing: 0.06em; text-transform: uppercase; padding: 7px 18px; border-radius: var(--radius-sm); cursor: pointer; white-space: nowrap; }
+  
   .overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.85); z-index: 200; align-items: flex-end; justify-content: center; padding: 0; }
   .overlay.open { display: flex; }
   @media (min-width: 640px) { .overlay { align-items: center; padding: 1.5rem; } }
@@ -94,6 +120,7 @@
   .exercise-name .sub-block-title { display: block; background: rgba(255,61,0,0.08); border-left: 2px solid var(--fire); color: var(--fire-glow); font-size: 10.5px; text-transform: uppercase; letter-spacing: 0.05em; padding: 2px 8px; border-radius: 0 4px; margin-bottom: 6px; width: max-content; font-weight: 700; }
   .exercise-detail { font-size: 12px; color: var(--text-secondary); text-align: right; flex-shrink: 0; line-height: 1.5; word-break: break-word; min-width: 140px; padding-top: 2px; }
   .exercise-detail b { display: block; color: var(--text-primary); font-weight: 600; font-size: 13px; margin-bottom: 2px; }
+  
   .modal-footer { padding: 1rem 1.25rem 1.5rem; display: flex; gap: 0.75rem; flex-wrap: wrap; }
   .btn-complete { flex: 1; min-width: 180px; background: var(--fire); color: white; border: none; font-family: 'Barlow Condensed', sans-serif; font-weight: 900; font-size: 1.1rem; letter-spacing: 0.08em; text-transform: uppercase; padding: 13px 24px; border-radius: var(--radius-md); cursor: pointer; transition: background 0.15s ease, transform 0.1s ease; }
   .btn-complete:hover { background: #FF5722; transform: scale(1.02); }
@@ -101,14 +128,13 @@
   .btn-complete.done { background: #00897B; }
   .btn-close-modal { background: rgba(255,255,255,0.05); color: var(--text-secondary); border: 1px solid var(--border); font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 1rem; letter-spacing: 0.05em; text-transform: uppercase; padding: 13px 20px; border-radius: var(--radius-md); cursor: pointer; }
   .empty { grid-column: 1 / -1; text-align: center; padding: 3rem 1rem; color: var(--text-muted); }
-  ::-webkit-scrollbar { width: 6px; height: 6px; }
-  ::-webkit-scrollbar-track { background: transparent; }
-  ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.12); border-radius: 3px; }
+  
   @media (max-width: 580px) {
     .hero h1 { font-size: 1.85rem; } .grid { grid-template-columns: 1fr; } .hero-stats { gap: 0.75rem; }
     .exercise-row { flex-direction: column; gap: 8px; padding: 0.9rem 0; }
     .exercise-name { min-width: 100%; }
     .exercise-detail { text-align: left; padding-left: 18px; min-width: 100%; border-top: 1px solid rgba(255,255,255,0.03); padding-top: 6px; }
+    .glosario-grid { grid-template-columns: 1fr; }
   }
 </style>
 </head>
@@ -122,11 +148,13 @@
   <p class="hero-eyebrow">Performance Hub — Alumna: <span id="student-name">Cristina Valeros</span></p>
   <h1 id="hero-title">Hipertrofia Estructural /<br><em>Definición Estética</em></h1>
   <p class="hero-sub" id="hero-subtitle">Plan optimizado y diseñado por el <strong>Coach JP</strong> — Profesor de Educación Física, Especialista en alto rendimiento deportivo, Posgrado en ciencias del deporte (Freie Universität Berlin - Alemania).</p>
+  
   <div class="hero-stats">
     <div class="stat-pill"><div class="stat-dot"></div><b id="stat-count">0</b>&nbsp;rutinas programadas</div>
     <div class="stat-pill"><div class="stat-dot" style="background:var(--gold)"></div><b>1</b>&nbsp;disciplina activa</div>
     <div class="stat-pill"><div class="stat-dot" style="background:#B39DDB"></div><b id="stat-done">0</b>&nbsp;completadas hoy</div>
   </div>
+
   <div class="mesociclo-box" id="mesociclo-content">
     <h3>Estrategia General del Mesociclo</h3>
     <p>Este macro-bloque de musculación se organiza en un <strong>Mesociclo Pedagógico de 4 Semanas</strong> orientado al incremento controlado de la tensión mecánica, la densidad y la tasa de vaciado glucogénico. El avance cronológico se desglosa bajo el siguiente estándar evolutivo estructural:</p>
@@ -140,6 +168,105 @@
       <strong>⚠️ Protocolo de Cuidados Especiales:</strong> Se reporta dolor no recurrente en la zona baja de la espalda (posible acortamiento o desviación postural previa). Queda terminantemente prohibido realizar rebotes en el fondo de los levantamientos axiales. Mantener la maniobra de Valsalva activa y fijar conscientemente la neutralidad pélvica/lumbar en cada vector horizontal.
     </div>
   </div>
+
+  <div class="glosario-container">
+    <details class="glosario-details">
+      <summary class="glosario-summary">
+        <span>🎬 Glosario de Ejecución Biomecánica (Videos)</span>
+      </summary>
+      <div class="glosario-content">
+        
+        <div class="glosario-day-title">🗓️ DÍA 1 – Pierna Completa (Fuerza Axial y Glúteos)</div>
+        <div class="glosario-grid">
+          <div class="video-card"><div class="video-info"><div class="video-title">Movilidad Coxofemoral (90/90)</div><div class="video-category">Movilidad Dinámica</div></div><a href="https://www.youtube.com/shorts/8VsrVpwI9Yk" target="_blank" class="btn-video"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>Ver</a></div>
+          <div class="video-card"><div class="video-info"><div class="video-title">Ankle Dorsiflexion (Pared)</div><div class="video-category">Restricción Tobillo</div></div><a href="https://www.youtube.com/shorts/OmJ6vNfZwYQ" target="_blank" class="btn-video"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>Ver</a></div>
+          <div class="video-card"><div class="video-info"><div class="video-title">Monster Walks con Banda</div><div class="video-category">Activación Glúteo</div></div><a href="https://www.youtube.com/watch?v=qzVw01gntoA" target="_blank" class="btn-video"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>Ver</a></div>
+          <div class="video-card"><div class="video-info"><div class="video-title">Glute Bridge Iso-Hold</div><div class="video-category">Aislamiento Isométrico</div></div><a href="https://www.youtube.com/shorts/M7c-lYJDqRg" target="_blank" class="btn-video"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>Ver</a></div>
+          <div class="video-card"><div class="video-info"><div class="video-title">Sentadilla Trasera Barra Libre</div><div class="video-category">Fuerza Axial</div></div><a href="https://www.youtube.com/shorts/dW3zj79xfrc" target="_blank" class="btn-video"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>Ver</a></div>
+          <div class="video-card"><div class="video-info"><div class="video-title">Hip Thrust Barra/Máquina</div><div class="video-category">Saturación Acortamiento</div></div><a href="https://www.youtube.com/shorts/WUDVZPTHUhU" target="_blank" class="btn-video"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>Ver</a></div>
+          <div class="video-card"><div class="video-info"><div class="video-title">Sentadilla Búlgara (Manc.)</div><div class="video-category">Rango Estiramiento</div></div><a href="https://www.youtube.com/shorts/bbHPPlQeu6Y" target="_blank" class="btn-video"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>Ver</a></div>
+          <div class="video-card"><div class="video-info"><div class="video-title">Kickbacks Glúteo en Polea</div><div class="video-category">Fibra Anatómica 30°</div></div><a href="https://www.youtube.com/shorts/BNOfVprH6DI" target="_blank" class="btn-video"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>Ver</a></div>
+          <div class="video-card"><div class="video-info"><div class="video-title">Extensión de Cuádriceps</div><div class="video-category">Aislamiento Mecánico</div></div><a href="https://www.youtube.com/shorts/uM86QE59Tgc" target="_blank" class="btn-video"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>Ver</a></div>
+          <div class="video-card"><div class="video-info"><div class="video-title">Isometric Wall-Sit</div><div class="video-category">Sostén Isquémico</div></div><a href="https://www.youtube.com/watch?v=SszDMOZvFuw" target="_blank" class="btn-video"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>Ver</a></div>
+          <div class="video-card"><div class="video-info"><div class="video-title">Max Air Squats (Libres)</div><div class="video-category">Vaciado Láctico</div></div><a href="https://www.youtube.com/watch?v=rMvwVtljTE" target="_blank" class="btn-video"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>Ver</a></div>
+          <div class="video-card"><div class="video-info"><div class="video-title">Dumbbell Plank Drag</div><div class="video-category">Estabilidad Anti-Rotación</div></div><a href="https://www.youtube.com/shorts/5gR0_CcEYvw" target="_blank" class="btn-video"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>Ver</a></div>
+          <div class="video-card"><div class="video-info"><div class="video-title">Russian Twist con Disco</div><div class="video-category">Fijación Oblicuos</div></div><a href="https://www.youtube.com/shorts/uIGn2y3yBGI" target="_blank" class="btn-video"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>Ver</a></div>
+          <div class="video-card"><div class="video-info"><div class="video-title">Finisher Cardio EMOM</div><div class="video-category">Cinta / Bici a elección</div></div><span class="btn-video disabled">Texto</span></div>
+        </div>
+
+        <div class="glosario-day-title">🗓️ DÍA 2 – Torso Integrado (Push/Pull)</div>
+        <div class="glosario-grid">
+          <div class="video-card"><div class="video-info"><div class="video-title">Dislocaciones con Banda</div><div class="video-category">Lubricación Glenohumeral</div></div><a href="https://www.youtube.com/watch?v=iDEF7HNo5yE" target="_blank" class="btn-video"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>Ver</a></div>
+          <div class="video-card"><div class="video-info"><div class="video-title">Cat-Cow Torácico</div><div class="video-category">Movilidad Escapular</div></div><a href="https://www.youtube.com/shorts/EBQD1Sha26k" target="_blank" class="btn-video"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>Ver</a></div>
+          <div class="video-card"><div class="video-info"><div class="video-title">YTWL Isométrico Corporal</div><div class="video-category">Estabilizadores Dorsales</div></div><a href="https://www.youtube.com/shorts/mMAZ1TwinJc" target="_blank" class="btn-video"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>Ver</a></div>
+          <div class="video-card"><div class="video-info"><div class="video-title">Press Militar de Pie</div><div class="video-category">Empuje Vertical</div></div><a href="https://www.youtube.com/shorts/if97enQvM70" target="_blank" class="btn-video"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>Ver</a></div>
+          <div class="video-card"><div class="video-info"><div class="video-title">Jalón Pecho Polea Ancho</div><div class="video-category">Tracción Vertical</div></div><a href="https://www.youtube.com/shorts/W2x6zP9k7SM" target="_blank" class="btn-video"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>Ver</a></div>
+          <div class="video-card"><div class="video-info"><div class="video-title">Incline Chaos Press</div><div class="video-category">Neutro a Prono Dinámico</div></div><a href="https://www.youtube.com/shorts/U94dC3Ff6vA" target="_blank" class="btn-video"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>Ver</a></div>
+          <div class="video-card"><div class="video-info"><div class="video-title">Lean-Away Lateral Raise</div><div class="video-category">Banco Inclinado 45°</div></div><a href="https://www.youtube.com/shorts/dcOdugBhLOs" target="_blank" class="btn-video"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>Ver</a></div>
+          <div class="video-card"><div class="video-info"><div class="video-title">Vuelos Laterales de Pie</div><div class="video-category">Deltoides Tridimensional</div></div><a href="https://www.youtube.com/shorts/_PUNdZG2xNs" target="_blank" class="btn-video"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>Ver</a></div>
+          <div class="video-card"><div class="video-info"><div class="video-title">Sit-Ups con Disco</div><div class="video-category">Fuerza Concéntrica Core</div></div><a href="https://www.youtube.com/shorts/zEuaVsqJFcA" target="_blank" class="btn-video"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>Ver</a></div>
+          <div class="video-card"><div class="video-info"><div class="video-title">Leg Raises (Elevaciones)</div><div class="video-category">Recto Anterior Abdominal</div></div><a href="https://www.youtube.com/shorts/FijNSgahpz0" target="_blank" class="btn-video"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>Ver</a></div>
+          <div class="video-card"><div class="video-info"><div class="video-title">Dragon Flags Progresión</div><div class="video-category">Gimnástico de Alta Palanca</div></div><a href="https://www.youtube.com/shorts/mL-_0xacP_8" target="_blank" class="btn-video"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>Ver</a></div>
+          <div class="video-card"><div class="video-info"><div class="video-title">Dual DB Push Press</div><div class="video-category">Transferencia Cinética</div></div><a href="https://www.youtube.com/watch?v=JqztIwOb4Hs" target="_blank" class="btn-video"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>Ver</a></div>
+          <div class="video-card"><div class="video-info"><div class="video-title">Mountain Climbers</div><div class="video-category">Sostén Compacto</div></div><a href="https://www.youtube.com/shorts/tQkpdUWK8KU" target="_blank" class="btn-video"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>Ver</a></div>
+        </div>
+
+        <div class="glosario-day-title">🗓️ DÍA 3 – Cadena Posterior (Isquiosurales y Glúteos)</div>
+        <div class="glosario-grid">
+          <div class="video-card"><div class="video-info"><div class="video-title">Leg Swings (Frontal/Sagital)</div><div class="video-category">Tolerancia Estiramiento</div></div><a href="https://www.youtube.com/shorts/wF10oYsLUw0" target="_blank" class="btn-video"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>Ver</a></div>
+          <div class="video-card"><div class="video-info"><div class="video-title">Banded Good Morning</div><div class="video-category">Patrón Bisagra Cadena</div></div><a href="https://www.youtube.com/shorts/DQlKfI34Ot4" target="_blank" class="btn-video"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>Ver</a></div>
+          <div class="video-card"><div class="video-info"><div class="video-title">Single-Leg Glute Bridge</div><div class="video-category">Inhibición Recíproca</div></div><a href="https://www.youtube.com/shorts/VOTe7_T7aSY" target="_blank" class="btn-video"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>Ver</a></div>
+          <div class="video-card"><div class="video-info"><div class="video-title">Peso Muerto Rumano (RDL)</div><div class="video-category">Tensión Rango Extendido</div></div><a href="https://www.youtube.com/watch?v=0XL4cZR2Ink" target="_blank" class="btn-video"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>Ver</a></div>
+          <div class="video-card"><div class="video-info"><div class="video-title">Curl Femoral Acostada</div><div class="video-category">Parciales Isquiosurales</div></div><a href="https://www.youtube.com/shorts/5Vd8Lnh49eo" target="_blank" class="btn-video"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>Ver</a></div>
+          <div class="video-card"><div class="video-info"><div class="video-title">Aducciones en Máquina</div><div class="video-category">Inclinación Torso Dinámica</div></div><a href="https://www.youtube.com/shorts/vlViIgtkvh4" target="_blank" class="btn-video"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>Ver</a></div>
+          <div class="video-card"><div class="video-info"><div class="video-title">Abducción Cadera Sentada</div><div class="video-category">Drop Set Mecánico</div></div><a href="https://www.youtube.com/shorts/M370ukcFWlA" target="_blank" class="btn-video"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>Ver</a></div>
+          <div class="video-card"><div class="video-info"><div class="video-title">Deficit Monster Walks</div><div class="video-category">Banda Tobillos Sentadilla 1/4</div></div><a href="https://www.youtube.com/watch?v=qzVw01gntoA" target="_blank" class="btn-video"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>Ver</a></div>
+          <div class="video-card"><div class="video-info"><div class="video-title">Frog Pumps con Peso</div><div class="video-category">Extensión Corta Aislada</div></div><a href="https://www.youtube.com/shorts/y-yo8NBhs0k" target="_blank" class="btn-video"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>Ver</a></div>
+          <div class="video-card"><div class="video-info"><div class="video-title">Single Leg V-Ups</div><div class="video-category">Cadena Oblicua Anterior</div></div><a href="https://www.youtube.com/shorts/-ipF-Xl5eY4" target="_blank" class="btn-video"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>Ver</a></div>
+          <div class="video-card"><div class="video-info"><div class="video-title">Suitcase Carry Pesado</div><div class="video-category">Anti-Flexión Lateral Pura</div></div><a href="https://www.youtube.com/shorts/iTjwbts8Djw" target="_blank" class="btn-video"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>Ver</a></div>
+          <div class="video-card"><div class="video-info"><div class="video-title">V-Ups Transferencia Objeto</div><div class="video-category">Coordinación Intermuscular</div></div><a href="https://www.youtube.com/shorts/XxV75gxWZ6c" target="_blank" class="btn-video"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>Ver</a></div>
+        </div>
+
+        <div class="glosario-day-title">🗓️ DÍA 4 – Tren Inferior (Énfasis Cuádriceps)</div>
+        <div class="glosario-grid">
+          <div class="video-card"><div class="video-info"><div class="video-title">Cossack Squats con KB</div><div class="video-category">Apertura Unilateral Copa</div></div><a href="https://www.youtube.com/shorts/TR4GN3rLuQ8" target="_blank" class="btn-video"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>Ver</a></div>
+          <div class="video-card"><div class="video-info"><div class="video-title">Single-Leg Isometric Wall Sit</div><div class="video-category">Protección Flujo Patelar</div></div><span class="btn-video disabled">Texto</span></div>
+          <div class="video-card"><div class="video-info"><div class="video-title">Deficit Reverse Lunge Barra</div><div class="video-category">Zancada Elongada en Disco</div></div><a href="https://www.youtube.com/shorts/jolYORaNnxM" target="_blank" class="btn-video"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>Ver</a></div>
+          <div class="video-card"><div class="video-info"><div class="video-title">Prensa Horizontal 180°</div><div class="video-category">Combo Isquemia Negativa</div></div><a href="https://www.youtube.com/shorts/VztOTDLqs7w" target="_blank" class="btn-video"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>Ver</a></div>
+          <div class="video-card"><div class="video-info"><div class="video-title">Walking Lunges Rack</div><div class="video-category">Carga Asimétrica Cruzada</div></div><a href="https://www.youtube.com/watch?v=kcVqtqe03WI" target="_blank" class="btn-video"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>Ver</a></div>
+          <div class="video-card"><div class="video-info"><div class="video-title">Spanish Squat con Remo</div><div class="video-category">Extensión Rodilla Constante</div></div><a href="https://www.youtube.com/watch?v=Md-41Aw8o74" target="_blank" class="btn-video"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>Ver</a></div>
+          <div class="video-card"><div class="video-info"><div class="video-title">Elevación Talones Smith</div><div class="video-category">Gastrocnemio Smith</div></div><a href="https://www.youtube.com/shorts/g-YzDXmVokI" target="_blank" class="btn-video"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>Ver</a></div>
+          <div class="video-card"><div class="video-info"><div class="video-title">Heavy DB Farmer's Walk</div><div class="video-category">Sóleo Tip-Toe Carry</div></div><a href="https://www.youtube.com/watch?v=dm5xSL5P0Bg" target="_blank" class="btn-video"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>Ver</a></div>
+          <div class="video-card"><div class="video-info"><div class="video-title">Gemelos Sentada</div><div class="video-category">Aislamiento de Sóleos</div></div><a href="https://www.youtube.com/shorts/amK4IUv7BsQ" target="_blank" class="btn-video"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>Ver</a></div>
+          <div class="video-card"><div class="video-info"><div class="video-title">Renegade Row con Push-Up</div><div class="video-category">Anti-Rotación Superior</div></div><a href="https://www.youtube.com/shorts/CFHXoZempxw" target="_blank" class="btn-video"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>Ver</a></div>
+          <div class="video-card"><div class="video-info"><div class="video-title">Crunches Agrupados</div><div class="video-category">Flexión Recto Global</div></div><a href="https://www.youtube.com/watch?v=OscoLA0XZjU" target="_blank" class="btn-video"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>Ver</a></div>
+          <div class="video-card"><div class="video-info"><div class="video-title">Hollow Body Flutter Kicks</div><div class="video-category">Perturbación Distal Isométrica</div></div><a href="https://www.youtube.com/watch?v=F8fhsu9-Lu8" target="_blank" class="btn-video"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>Ver</a></div>
+        </div>
+
+        <div class="glosario-day-title">🗓️ DÍA 5 – Torso Estético y Finisher</div>
+        <div class="glosario-grid">
+          <div class="video-card"><div class="video-info"><div class="video-title">KB Halo a Sotts Press</div><div class="video-category">Encendido Escapulohumeral</div></div><a href="https://www.youtube.com/shorts/2-grmRN2SbA" target="_blank" class="btn-video"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>Ver</a></div>
+          <div class="video-card"><div class="video-info"><div class="video-title">Inchworm Push-Up Rotación</div><div class="video-category">Cadena Superior Multiarticular</div></div><a href="https://www.youtube.com/watch?v=NH7kkB2gs8A" target="_blank" class="btn-video"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>Ver</a></div>
+          <div class="video-card"><div class="video-info"><div class="video-title">Scapular Blackburns</div><div class="video-category">Sobrecarga Posicional Dorsal</div></div><a href="https://www.youtube.com/shorts/ZY5aOc0Ym6U" target="_blank" class="btn-video"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>Ver</a></div>
+          <div class="video-card"><div class="video-info"><div class="video-title">Bench Press (Barra Libre)</div><div class="video-category">Empuje Horizontal Máximo</div></div><a href="https://www.youtube.com/watch?v=SCVCLChPQFY" target="_blank" class="btn-video"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>Ver</a></div>
+          <div class="video-card"><div class="video-info"><div class="video-title">Remo T con Barra</div><div class="video-category">Tracción Horizontal Media</div></div><a href="https://www.youtube.com/shorts/0pGiyBXvA2c" target="_blank" class="btn-video"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>Ver</a></div>
+          <div class="video-card"><div class="video-info"><div class="video-title">Press Francés Barra Plana</div><div class="video-category">Cabeza Larga Extensores</div></div><a href="https://www.youtube.com/shorts/DVuYVA7DCJk" target="_blank" class="btn-video"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>Ver</a></div>
+          <div class="video-card"><div class="video-info"><div class="video-title">Face Pull Polea Alta</div><div class="video-category">Iso-Hold Deltoides Post</div></div><a href="https://www.youtube.com/shorts/IeOqdw9WI90" target="_blank" class="btn-video"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>Ver</a></div>
+          <div class="video-card"><div class="video-info"><div class="video-title">Press Pecho Inclinado</div><div class="video-category">Mancuernas Fallo Técnico</div></div><a href="https://www.youtube.com/shorts/gfNrg3lI6kU" target="_blank" class="btn-video"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>Ver</a></div>
+          <div class="video-card"><div class="video-info"><div class="video-title">Z-Sit Dumbbell Bicep Curl</div><div class="video-category">Aislamiento Libre de Apoyo</div></div><a href="https://www.youtube.com/watch?v=HnHuhf4hEWY" target="_blank" class="btn-video"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>Ver</a></div>
+          <div class="video-card"><div class="video-info"><div class="video-title">Extensión Tríceps Polea</div><div class="video-category">Tríceps Overhead Cuerda</div></div><a href="https://www.youtube.com/shorts/V-s2JqOdPCQ" target="_blank" class="btn-video"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>Ver</a></div>
+          <div class="video-card"><div class="video-info"><div class="video-title">Triceps Pushdowns</div><div class="video-category">Polea Alta de Frente</div></div><a href="https://www.youtube.com/shorts/xguGXQAvbKk" target="_blank" class="btn-video"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>Ver</a></div>
+          <div class="video-card"><div class="video-info"><div class="video-title">Dual Farmer's Walk Impar</div><div class="video-category">Overhead + Suitcase Combo</div></div><a href="https://www.youtube.com/shorts/ZapT1pafnCI" target="_blank" class="btn-video"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>Ver</a></div>
+          <div class="video-card"><div class="video-info"><div class="video-title">Knees to Chest Colgada</div><div class="video-category">Flexores Cadera Gimnásticos</div></div><a href="https://www.youtube.com/shorts/7oPUAVy-NZs" target="_blank" class="btn-video"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>Ver</a></div>
+          <div class="video-card"><div class="video-info"><div class="video-title">Plank Step Up</div><div class="video-category">Estabilidad Escapulo-Pélvica</div></div><a href="https://www.youtube.com/shorts/fCXsX8kyyCI" target="_blank" class="btn-video"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>Ver</a></div>
+          <div class="video-card"><div class="video-info"><div class="video-title">Hollow Rocks</div><div class="video-category">Mecedora Rígida Abdominal</div></div><a href="https://www.youtube.com/watch?v=p7j02V1fIzU" target="_blank" class="btn-video"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>Ver</a></div>
+          <div class="video-card"><div class="video-info"><div class="video-title">Bicep Curl to Overhead Press</div><div class="video-category">Combo Martillo Finisher</div></div><a href="https://www.youtube.com/shorts/fMF_xfZnrbY" target="_blank" class="btn-video"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>Ver</a></div>
+          <div class="video-card"><div class="video-info"><div class="video-title">Assault Bike</div><div class="video-category">Depleción Glucogénica Final</div></div><a href="https://www.youtube.com/shorts/wF1N48xFcdQ" target="_blank" class="btn-video"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>Ver</a></div>
+        </div>
+
+      </div>
+    </details>
+  </div>
 </section>
 
 <div class="filters-wrap">
@@ -152,7 +279,7 @@
     <div class="filter-sep"></div>
     <span class="filter-label">Foco de la Sesión</span>
     <div class="filter-group" id="filter-level">
-      <div class="chip active" data-group="level" data-val="all">Todos</div>
+      <div class="chip active" data-group="level" data-val="all">Todos los Días</div>
     </div>
   </div>
 </div>
@@ -222,11 +349,11 @@ const workouts = [
     ],
     main: [
       { name: "Press Militar con Barra de Pie (Overhead Press)", sub: "Barra apoyada en el rack a la altura de hombros. Aprieta glúteos y cuádriceps al 100%. Empuja la barra en línea recta, llevando la cabeza sutilmente adelante arriba. No uses impulso de piernas. <b>Interset Activo:</b> Entre series efectivas realiza inmediatamente 10 reps de Remo de pie con dos mancuernas (tracción horizontal moderada).", reps: "4 series x 10-8-6-6 rep.", detail: "<b>Tempo: 2.1.1.0</b> Carga Progresiva<br>Descanso: 60s post interset" },
-      { name: "SUPER SERIE HÍBRIDA ANTAGONISTA (TORSO)", sub: "<span class='sub-block-title'>A1</span> <b>Jalón al Pecho en Polea (Agarre prono ancho):</b> 10 reps. Torso inclinado sutilmente hacia atrás (~15°). Tracciona llevando la barra hacia la parte superior del pecho, guiando con codos hacia abajo y atrás. Sostén 1s abajo exprimiendo dorsales.<br><br><span class='sub-block-title'>A2</span> <b>Incline Chaos Dumbbell Press (Press Inclinado Neutro-Prono):</b> 10 reps. Banco a 30° o 45°. Inicia en el fondo con mancuernas en agarre neutro para máxima elongación, sostén 1s abajo. Empuja explosivo rotando las mancuernas para terminar arriba en agarre prono.", reps: "4 Rondas Completas", detail: "<b>Sin pausa entre A1 y A2</b><br>Descanso: 90s estrictos" }
+      { name: "SUPER SERIE HÍBRIDA ANTAGONISTA (TORSO)", sub: "<span class='sub-block-title'>A1</span> <b>Jalón al Pecho en Polea (Agarre prono ancho):</b> 10 reps. Torso inclinado sutilmente hacia atrás (~15°). Tracciona llevando la barra hacia la parte superior del pecho, guiando con codos hacia abajo y atrás. Sostén 1s abajo exprimiendo dorsales.<br><br><span class='sub-block-title'>A2</span> <b>Incline Chaos Dumbbell Press (Press Inclinado Neutro a Prono):</b> 10 reps. Banco a 30° o 45°. Inicia en el fondo con mancuernas en agarre neutro para máxima elongación, sostén 1s abajo. Empuja explosivo rotando las mancuernas para terminar arriba en agarre prono.", reps: "4 Rondas Completas", detail: "<b>Sin pausa entre A1 y A2</b><br>Descanso: 90s estrictos" }
     ],
     metcon: [
       { name: "CIRCUITO DELTOIDES COMPLETO (AMRAP 12 MINUTOS)", sub: "<span class='sub-block-title'>Estación 1</span> <b>Elevaciones Laterales en Banco Inclinado Lateral (Lean-Away):</b> 12 reps. Acostada de lado en banco inclinado a 45°. Eleva el brazo lateralmente manteniendo ligera flexión de codo. Máxima tensión en el inicio.<br><br><span class='sub-block-title'>Estación 2</span> <b>Vuelos Laterales con Mancuernas de Pie (Reps Completas):</b> 12 reps. Torso levemente inclinado adelante (5°), eleva hacia los costados alineando con hombros. Lidera con codos.<br><br><span class='sub-block-title'>Estación 3</span> <b>Repeticiones Parciales al Fallo Láctico:</b> Máximas reps posibles. Al terminar las reps completas, continúa subiendo las mancuernas únicamente unos 20-30 cm desde tus muslos (1/3 del recorrido) hasta la quemazón máxima.", reps: "AMRAP de 12 Minutos", detail: "<b>Bucle Continuo</b><br>Descanso: 45-60s post Estación 3" },
-      { name: "The Olympic Midline Chipper (Volumen Acumulado)", sub: "<span class='sub-block-title'>Fase 1</span> <b>75 Sit-Ups con Disco:</b> Sube contrayendo abdomen hasta sentarte y baja articulando vértebra por vértebra.<br><br><span class='sub-block-title'>Fase 2</span> <b>50 Leg Raises / Elevaciones de Piernas:</b> Tumbada boca arriba con manos fijas en soporte trasero. Baja controlando sin tocar el suelo ni despegando la lumbar.<br><br><span class='sub-block-title'>Fase 3</span> <b>25 Dragon Flags (Progresión):</b> Eleva cuerpo rígido y desciende controlado. Modificación: rodillas flexionadas estrictas al pecho levantando pelvis.", reps: "Time Cap Extremo: 9 min", detail: "<b>Volumen Descendente</b>" },
+      { name: "The Olympic Midline Chipper (Volumen Acumulado)", sub: "<span class='sub-block-title'>Fase 1</span> <b>75 Sit-Ups con Disco:</b> Sube contrayendo abdomen hasta sentarte y baja articulando verterbra por vértebra.<br><br><span class='sub-block-title'>Fase 2</span> <b>50 Leg Raises / Elevaciones de Piernas:</b> Tumbada boca arriba con manos fijas en soporte trasero. Baja controlando sin tocar el suelo ni despegando la lumbar.<br><br><span class='sub-block-title'>Fase 3</span> <b>25 Dragon Flags (Progresión):</b> Eleva cuerpo rígido y desciende controlado. Modificación: rodillas flexionadas estrictas al pecho levantando pelvis.", reps: "Time Cap Extremo: 9 min", detail: "<b>Volumen Descendente</b>" },
       { name: "MetCon / Finisher EMOM Intenso", sub: "EMOM de 6-10 minutos alternando minutos fijados. <b>Minutos Impares:</b> 15 reps de Dual DB Push Press (flexión sutil de 1/4 y empuje explosivo con piernas). <b>Minutos Pares:</b> 30-40 segundos de Mountain Climbers / Escaladores a máxima velocidad manteniendo core compacto y caderas bajas.", reps: "EMOM 6-10 Minutos", detail: "<b>Gasto Cardíaco Elevado</b>" }
     ]
   },
@@ -288,7 +415,7 @@ const workouts = [
     desc: "Hipertrofia de densidad en el tren superior, enfoque en la cadena cinética del core y depleción final de glucógeno semanal.",
     warmup: [
       { name: "KB Halo a Sotts Press Adaptado", sub: "Sostén KB invertida por los cuernos cerca del pecho. Realiza círculo fluido alrededor de la cabeza (Halo). Al regresar, baja a sentadilla profunda y realiza un press overhead estricto abajo.", reps: "2-3 series x 5 rep. (Por lado)" },
-      { name: "Inchworm con Push-Up y Rotación en T", sub: "De pie, piernas estiradas, apoya manos y camina a plancha alta. Ejecuta flexión estricta y, al subir, rota lateralmente elevando un brazo al techo (T). Regresa caminando hacia tus pies.", reps: "2-3 series x 8 rep." },
+      { name: "Inchworm con Push-Up y Rotación en T", sub: "De pie, piernas estiradas, apoya manos y camina a plancha alta. Ejecuta flexión estricta y al subir rota lateralmente elevando un brazo al techo (T). Regresa caminando hacia tus pies.", reps: "2-3 series x 8 rep." },
       { name: "Prone Scapular Blackburns (Sostén)", sub: "Boca abajo con frente apoyada. Despega manos y antebrazos. Lleva las manos lento de nuca a zona lumbar rotando las palmas (miran al techo al llegar abajo). Brazos altos respecto al suelo.", reps: "2-3 series x 30 segundos" }
     ],
     main: [
@@ -422,7 +549,6 @@ function openModal(w) {
   
   let html = '';
   
-  // 1. WARMUP
   if (w.warmup && w.warmup.length > 0) {
     html += `
       <div class="block">
@@ -444,7 +570,6 @@ function openModal(w) {
     html += `</div></div>`;
   }
   
-  // 2. MAIN BLOCK
   if (w.main && w.main.length > 0) {
     html += `
       <div class="block">
@@ -466,7 +591,6 @@ function openModal(w) {
     html += `</div></div>`;
   }
   
-  // 3. METCON / CORE / ACCESORIOS
   if (w.metcon && w.metcon.length > 0) {
     html += `
       <div class="block">
